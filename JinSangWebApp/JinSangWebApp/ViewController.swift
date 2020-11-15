@@ -28,7 +28,12 @@ class ViewController: UIViewController {
     }
 
     @objc private func didTapButton() {
-        
+        guard let url = URL(string: "https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/") else {
+            return
+        }
+        let vc = WebViewViewController(url: url,title: "JinSang")
+        let navCV = UINavigationController(rootViewController: vc)
+        present(navCV, animated: true, completion: nil)
     }
 
 }
